@@ -1,0 +1,54 @@
+# Parameters
+nc: 80 # number of classes
+scales: # model compound scaling constants, i.e. 'model=yolov8n.yaml' will call yolov8.yaml with scale 'n'
+  # [depth, width, max_channels]
+  n: [0.33, 0.25, 1024] 
+
+# YOLOv8.0n backbone
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, Conv, [64, 3, 2]] # 0-P1/2
+  - [-1, 1, Conv, [128, 3, 2]] # 1-P2/4
+  - [-1, 3, C2f, [128, True]]
+  - [-1, 1, Conv, [256, 3, 2]] # 3-P3/8
+  - [-1, 6, C2f, [256, True]]
+  - [-1, 1, SCDown, [512, 3, 2]] # 5-P4/16
+  - [-1, 6, C2f, [512, True]]
+  - [-1, 1, SCDown, [1024, 3, 2]] # 7-P5/32
+  - [-1, 3, C2f, [1024, True]]
+  - [-1, 1, SPPF, [1024, 5]] # 9
+  - [-1, 1, PSA, [1024]] # 10
+
+
+# YOLOv8.0n head
+#gold-yolo Gather-and-Distribute Mechanism
+#https://github.com/huawei-noah/Efficient-Computing/tree/master/Detection/Gold-YOLO
+head:
+# Low-GD
+  - [[2, 4, 6, 10], 1, SimFusion_4in, []] # 11
+  - [-1, 1, IFM, [[64, 32]]] # 12
+   
+  - [10, 1, Conv, [512, 1, 1]] # 13
+  - [[4, 6, -1], 1, SimFusion_3in, [512]] # 14
+  - [[-1, 12], 1, InjectionMultiSum_Auto_pool, [512, [64, 32], 0]] # 15
+  - [-1, 3, C2f, [512]] # 16
+  
+# High-GD
+  - [6, 1, Conv, [256, 1, 1]] # 17
+  - [[2, 4, -1], 1, SimFusion_3in, [256]] # 18
+  - [[-1, 12], 1, InjectionMultiSum_Auto_pool, [256, [64, 32], 1]] # 19
+  - [-1, 3, C2f, [256]] # 20  head N3
+ 
+  - [[20, 16, 10], 1, PyramidPoolAgg, [352, 2]] # 21
+  - [-1, 1, TopBasicLayer, [352, [64, 128]]] # 22
+ 
+  - [[20, 17], 1, AdvPoolFusion, []] # 23
+  - [[-1, 22], 1, InjectionMultiSum_Auto_pool, [256, [64, 128], 0]] # 24
+  - [-1, 3, C2f, [256]] # 25  head N4
+ 
+  - [[-1, 13], 1, AdvPoolFusion, []] # 26
+  - [[-1, 22], 1, InjectionMultiSum_Auto_pool, [512, [64, 128], 1]] # 27
+  - [-1, 3, C2fCIB, [1024]] # 28    head N5
+ 
+  - [[20, 25, 28], 1, v10Detect, [nc]] # 29
+
