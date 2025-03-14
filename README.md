@@ -17,3 +17,4 @@ heatmap.py: get heapmap of the model,you can choose whatever layers of the model
 train_v10.py: set training parameters here and start training  
 test.py: test the model  
 The improved YAML file we have tried is located at: DMYOLO\ultralytics\cfg\models\v10  
+requirements.txt: the enviroment requirements
