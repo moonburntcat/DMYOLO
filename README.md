@@ -1,4 +1,4 @@
-# [Enhanced YOLOv10 for Real-time Fish Disease Detection in Aquaculture Farms]()
+# [Real time monitoring system for fish health in aquaculture farms using deep learning]()
 
 
 Duanrui Wang, Fan Ge, Hongjian Lv, Xingyue Zhu, Dianting Zeng, Meng Wu, Jiyang Yu, Weijian Cui, Chi Wu, Yi Shi   
