@@ -3,7 +3,7 @@
 
 Duanrui Wang, Fan Ge, Hongjian Lv, Xingyue Zhu, Dianting Zeng, Meng Wu, Jiyang Yu, Weijian Cui, Chi Wu, Yi Shi   
 E-mail addresses: qi.wu@gmlab.ac.cn(C. Wu), shy_xflx@163.com(Y. Shi)  
-It has now been submitted to《Aquaculture International》  
+It has now been submitted to《Journal of the Science of Food and Agriculture》  
 
 The dataset can be downloaded from the link: https://www.kaggle.com/datasets/moonburntcat/belangeri-croaker-dataset/data  
 It contains folders 1-5 and labels.  
