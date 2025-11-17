@@ -1,10 +1,10 @@
-# [Real time monitoring system for fish health in aquaculture farms using deep learning]()
+# [Real-time Fish Disease Detection System for Aquaculture Based on Edge Computing]()
 
 <img width="853" height="471" alt="image" src="https://github.com/user-attachments/assets/dab12010-97ff-4b23-8745-ac4fa1a90250" />
 
-Duanrui Wang, Fan Ge, Hongjian Lv, Xingyue Zhu, Dianting Zeng, Meng Wu, Jiyang Yu, Weijian Cui, Chi Wu, Yi Shi   
+Duanrui Wang, Fan Ge, Hongjian Lv, Xingyue Zhu, Dianting Zeng, Meng Wu, Jiyang Yu, Weijian Cui, Qiwei Qin, Shaowen Wang4, Chi Wu, Yi Shi   
 E-mail addresses: qi.wu@gmlab.ac.cn(C. Wu), shy_xflx@163.com(Y. Shi)  
-It has now been submitted to《JOURNAL OF FISH BIOLOGY》  
+It has now been submitted to《Aquaculture》  
 <img width="843" height="378" alt="image" src="https://github.com/user-attachments/assets/65b47ff8-b91c-4fdd-bde1-53c944f47a29" />
 
 Dataset  
