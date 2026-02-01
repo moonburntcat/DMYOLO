@@ -14,7 +14,7 @@ A custom dataset named the Belangeri Croaker Dataset was constructed by collecti
 The dataset can be downloaded from the link: https://www.kaggle.com/datasets/moonburntcat/belangeri-croaker-dataset/data  
 It contains folders 1-5 and labels.  
 <img width="565" height="368" alt="image" src="https://github.com/user-attachments/assets/882a05ba-9a3a-4168-8299-a66e9acdaf39" />
-
+---
 🚀 Getting Started  
 requirements.txt: the enviroment requirements
 get_FPS.py: get FPS of the model  
