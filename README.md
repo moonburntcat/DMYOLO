@@ -5,6 +5,7 @@
 Duanrui Wang, Fan Ge, Hongjian Lv, Xingyue Zhu, Dianting Zeng, Meng Wu, Jiyang Yu, Weijian Cui, Qiwei Qin, Shaowen Wang4, Chi Wu, Yi Shi   
 E-mail addresses: qi.wu@gmlab.ac.cn(C. Wu), shy_xflx@163.com(Y. Shi)  
 It has now been submitted to《Aquaculture》  
+---
 🌟 Introduction   
 In the aquaculture industry, timely fish disease detection is vital to prevent outbreaks and minimize economic losses. DMYOLO is an enhanced model based on YOLOv10, specifically optimized for real-time fish disease detection in industrialized aquaculture environments.   
 <img width="843" height="378" alt="image" src="https://github.com/user-attachments/assets/65b47ff8-b91c-4fdd-bde1-53c944f47a29" />
@@ -30,11 +31,11 @@ pip install -r requirements.txt>```
 ```
 2. Training
 ```bash
-`python train.py --model dmyolo.yaml --data data/fish.yaml --epochs 100 --batch 16`
+python train.py --model dmyolo.yaml --data data/fish.yaml --epochs 100 --batch 16
 ```
 3. Inference / Demo
  ```bash
-`python detect.py --weights weights/best.pt --source path/to/your/video.mp4`
+python detect.py --weights weights/best.pt --source path/to/your/video.mp4
 ```
 ---
 📌Contributions & Contact Us  
