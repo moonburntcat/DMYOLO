@@ -28,8 +28,8 @@ The improved YAML file we have tried is located at: DMYOLO\ultralytics\cfg\model
 cd DMYOLO  
 pip install -r requirements.txt>```
 ```
+2. Training
 ```bash
-2. Training  
 `python train.py --model dmyolo.yaml --data data/fish.yaml --epochs 100 --batch 16`
 ```
 3. Inference / Demo
