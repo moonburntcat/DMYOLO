@@ -24,10 +24,12 @@ test.py: test the model
 The improved YAML file we have tried is located at: DMYOLO\ultralytics\cfg\models\v10  
 1. Requirements
 ```bash
-`<git clone https://github.com/moonburntcat/DMYOLO.git  
+<git clone https://github.com/moonburntcat/DMYOLO.git  
 cd DMYOLO  
-pip install -r requirements.txt>`
-3. Training  
+pip install -r requirements.txt>```
+
+```bash
+2. Training  
 `python train.py --model dmyolo.yaml --data data/fish.yaml --epochs 100 --batch 16`  
 4. Inference / Demo  
 `python detect.py --weights weights/best.pt --source path/to/your/video.mp4`
