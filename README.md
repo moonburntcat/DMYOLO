@@ -1,4 +1,4 @@
-# [Real-time Fish Disease Detection System for Aquaculture Based on Edge Computing]()
+# [Real-time Sick Fish Detection System for Aquaculture Based on Edge Computing]()
 
 <img width="853" height="471" alt="image" src="https://github.com/user-attachments/assets/dab12010-97ff-4b23-8745-ac4fa1a90250" />
 
