@@ -28,8 +28,8 @@ cd DMYOLO
 pip install -r requirements.txt>`
 2. Training  
 `python train.py --model dmyolo.yaml --data data/fish.yaml --epochs 100 --batch 16`  
-3. Inference / Demo
+3. Inference / Demo 
 `python detect.py --weights weights/best.pt --source path/to/your/video.mp4`  
 📌Contributions & Contact Us  
-Email us directly at [15652582873@163.com].
+Email us directly at [15652582873@163.com]. 
 If you find this work useful for your research, please cite our paper.
