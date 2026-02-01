@@ -8,7 +8,7 @@ It has now been submitted to《Aquaculture》
 🌟 Introduction   
 In the aquaculture industry, timely fish disease detection is vital to prevent outbreaks and minimize economic losses. DMYOLO is an enhanced model based on YOLOv10, specifically optimized for real-time fish disease detection in industrialized aquaculture environments.   
 <img width="843" height="378" alt="image" src="https://github.com/user-attachments/assets/65b47ff8-b91c-4fdd-bde1-53c944f47a29" />
-
+---
 📊Dataset  
 A custom dataset named the Belangeri Croaker Dataset was constructed by collecting images of both infected and healthy belangeri croaker. The images were captured from the Penghu semi-submersible deep-sea cage situated in proximity to Guishan Island, China. The monitoring equipment terminal was also deployed at this location. On March 19, 2024, the underwater camera was installed at a depth of 4 meters on the cage railing, and continuous image collection of belangeri croaker was conducted over a three-week period. The fish had been cultured for five months at the time of data collection.
 The dataset can be downloaded from the link: https://www.kaggle.com/datasets/moonburntcat/belangeri-croaker-dataset/data  
@@ -22,14 +22,16 @@ heatmap.py: get heapmap of the model,you can choose whatever layers of the model
 train_v10.py: set training parameters here and start training  
 test.py: test the model  
 The improved YAML file we have tried is located at: DMYOLO\ultralytics\cfg\models\v10  
-1. Requirements   
+1. Requirements
+```bash
 `<git clone https://github.com/moonburntcat/DMYOLO.git  
 cd DMYOLO  
 pip install -r requirements.txt>`
-2. Training  
+3. Training  
 `python train.py --model dmyolo.yaml --data data/fish.yaml --epochs 100 --batch 16`  
-3. Inference / Demo  
-`python detect.py --weights weights/best.pt --source path/to/your/video.mp4`  
+4. Inference / Demo  
+`python detect.py --weights weights/best.pt --source path/to/your/video.mp4`
+---
 📌Contributions & Contact Us  
 Email us directly at [15652582873@163.com].   
 If you find this work useful for your research, please cite our paper.
