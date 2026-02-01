@@ -27,12 +27,15 @@ The improved YAML file we have tried is located at: DMYOLO\ultralytics\cfg\model
 <git clone https://github.com/moonburntcat/DMYOLO.git  
 cd DMYOLO  
 pip install -r requirements.txt>```
-
+```
 ```bash
 2. Training  
-`python train.py --model dmyolo.yaml --data data/fish.yaml --epochs 100 --batch 16`  
-4. Inference / Demo  
+`python train.py --model dmyolo.yaml --data data/fish.yaml --epochs 100 --batch 16`
+```
+3. Inference / Demo
+ ```bash
 `python detect.py --weights weights/best.pt --source path/to/your/video.mp4`
+```
 ---
 📌Contributions & Contact Us  
 Email us directly at [15652582873@163.com].   
