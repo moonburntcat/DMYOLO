@@ -15,18 +15,17 @@ The dataset can be downloaded from the link: https://www.kaggle.com/datasets/moo
 It contains folders 1-5 and labels.  
 <img width="565" height="368" alt="image" src="https://github.com/user-attachments/assets/882a05ba-9a3a-4168-8299-a66e9acdaf39" />
 
-🚀 Getting Started
+🚀 Getting Started  
 requirements.txt: the enviroment requirements
 get_FPS.py: get FPS of the model  
 heatmap.py: get heapmap of the model,you can choose whatever layers of the model  
 train_v10.py: set training parameters here and start training  
 test.py: test the model  
-The improved YAML file we have tried is located at: DMYOLO\ultralytics\cfg\models\v10   
-
+The improved YAML file we have tried is located at: DMYOLO\ultralytics\cfg\models\v10  
 1. Requirements   
 git clone https://github.com/moonburntcat/DMYOLO.git
 cd DMYOLO
 pip install -r requirements.txt
-
+`<hello world>`  
 Contributions & Contact Us  
 Email us directly at [15652582873@163.com].
