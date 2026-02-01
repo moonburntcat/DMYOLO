@@ -23,9 +23,9 @@ train_v10.py: set training parameters here and start training
 test.py: test the model  
 The improved YAML file we have tried is located at: DMYOLO\ultralytics\cfg\models\v10  
 1. Requirements   
-git clone https://github.com/moonburntcat/DMYOLO.git
+`<git clone https://github.com/moonburntcat/DMYOLO.git
 cd DMYOLO
-pip install -r requirements.txt
-`<hello world>`  
+pip install -r requirements.txt>`  
+
 Contributions & Contact Us  
 Email us directly at [15652582873@163.com].
