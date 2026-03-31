@@ -14,25 +14,43 @@ from .tal import bbox2dist
 import math
 
 
+import math
+import torch
+import torch.nn as nn
+
 class SlideLoss(nn.Module):
-    def __init__(self, loss_fcn):
+    def __init__(self, loss_fcn, momentum=0.9):
         super(SlideLoss, self).__init__()
         self.loss_fcn = loss_fcn
         self.reduction = loss_fcn.reduction
         self.loss_fcn.reduction = 'none'  # required to apply SL to each element
+        
+        # EMA 衰减权重 beta [cite: 231, 232]
+        self.momentum = momentum
+        self.register_buffer('ema_mu', torch.tensor(0.5))
 
     def forward(self, pred, true, auto_iou=0.5):
         loss = self.loss_fcn(pred, true)
-        if auto_iou < 0.2:
-            auto_iou = 0.2
-        b1 = true <= auto_iou - 0.1
+        
+        if self.training:
+            with torch.no_grad():
+                self.ema_mu = self.momentum * self.ema_mu + (1.0 - self.momentum) * auto_iou
+        
+        current_iou = self.ema_mu.item()
+        
+        if current_iou < 0.2:
+            current_iou = 0.2
+            
+        b1 = true <= current_iou - 0.1
         a1 = 1.0
-        b2 = (true > (auto_iou - 0.1)) & (true < auto_iou)
-        a2 = math.exp(1.0 - auto_iou)
-        b3 = true >= auto_iou
+        b2 = (true > (current_iou - 0.1)) & (true < current_iou)
+        a2 = math.exp(1.0 - current_iou)
+        b3 = true >= current_iou
         a3 = torch.exp(-(true - 1.0))
+
         modulating_weight = a1 * b1 + a2 * b2 + a3 * b3
         loss *= modulating_weight
+
         if self.reduction == 'mean':
             return loss.mean()
         elif self.reduction == 'sum':
