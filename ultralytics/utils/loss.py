@@ -14,10 +14,6 @@ from .tal import bbox2dist
 import math
 
 
-import math
-import torch
-import torch.nn as nn
-
 class SlideLoss(nn.Module):
     def __init__(self, loss_fcn, momentum=0.9):
         super(SlideLoss, self).__init__()
